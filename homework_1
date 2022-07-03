@@ -7,3 +7,12 @@ and city not like '% %'
 select payment_id as "Номер", payment_date as "Дата и время платежа", amount as "Сумма платежа" from payment
 where amount >= '1.00' and payment_date between '2005-06-17 00:00:00.000' and '2005-06-19 23:59:59.999'
 order by amount ASC
+
+#Задание 4
+select payment_date from payment
+order by payment_date desc
+LIMIT 10
+
+#Задание 5
+
+select first_name as "Имя клиента", last_name as "Фамилия клиента", email as "Адрес эл. почты", character_length(email) as "Длина email", last_update as "Последнее обновление" from customer
