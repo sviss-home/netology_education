@@ -1,0 +1,9 @@
+#Задание 1, 2
+select distinct city from city
+where city like 'L%a'
+and city not like '% %'
+
+#Задание 3
+select payment_id as "Номер", payment_date as "Дата и время платежа", amount as "Сумма платежа" from payment
+where amount >= '1.00' and payment_date between '2005-06-17 00:00:00.000' and '2005-06-19 23:59:59.999'
+order by amount ASC
