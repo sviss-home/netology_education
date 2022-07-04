@@ -15,4 +15,10 @@ LIMIT 10
 
 #Задание 5
 
-select first_name as "Имя клиента", last_name as "Фамилия клиента", email as "Адрес эл. почты", character_length(email) as "Длина email", last_update as "Последнее обновление" from customer
+select first_name as "Имя клиента", last_name as "Фамилия клиента", email as "Адрес эл. почты", character_length(email) as "Длина email", last_update::date as "Последнее обновление" from customer
+
+#Задание 6
+
+select lower(first_name) as "Имя клиента" from customer
+where first_name = 'WILLIE' or first_name = 'KELLY'
+
