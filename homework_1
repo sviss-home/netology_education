@@ -22,3 +22,20 @@ select first_name as "Имя клиента", last_name as "Фамилия кл�
 select lower(first_name) as "Имя клиента" from customer
 where first_name = 'WILLIE' or first_name = 'KELLY'
 
+#ДопЗадание 1
+
+select film_id, title, rating, rental_rate from film where rating = 'R' and rental_rate > '0.00' and rental_rate < '3.00' or rating = 'PG-13' and rental_rate >= '4.00'
+
+#ДопЗадание 2
+
+select film_id, title, description from film
+order by character_length (description) desc 
+limit 3
+
+#ДопЗадание 3
+
+select customer_id, email, split_part("email", '@', 1) as "Email before@", split_part("email", '@', 2) as "Email after@" from customer
+
+#ДопЗадание 4
+
+select customer_id, email, split_part("email", '@', 1) as "Email before@", split_part("email", '@', 2) as "Email after@" from customer
