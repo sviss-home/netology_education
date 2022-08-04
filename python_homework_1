@@ -1,0 +1,76 @@
+#1 задание
+#1.1 задание
+phrase_1 = 'Насколько проще было бы писать программы, если бы не заказчики'
+phrase_2 = '640Кб должно хватить для любых задач. Билл Гейтс (по легенде)'
+if len(phrase_1) > len(phrase_2):
+  print('Фраза 1 длиннее фразы 2')
+else:
+  print ('Ошибка')
+  
+#1.2  задание
+phrase_1 = '640Кб должно хватить для любых задач. Билл Гейтс (по легенде)'
+phrase_2 = 'Насколько проще было бы писать программы, если бы не заказчики'
+if len(phrase_1) < len(phrase_2):
+  print('Фраза 2 длиннее фразы 1')
+else:
+  print ('Ошибка')
+  
+#1.3 задание
+phrase_1 = 'Насколько проще было бы писать программы, если бы не заказчики'
+phrase_2 = 'Насколько проще было бы писать программы, если бы не заказчики'
+if len(phrase_1) == len(phrase_2):
+  print('Фразы равной длины')
+else:
+  print ('Ошибка')
+  
+#2 задание
+year = int(input('Введите год: '))
+if year == 2020:
+    print('Високосный год')
+elif year == 2019:
+    print('Обычный год')
+	
+#3 задание
+month = input('Введите месяц: ')
+day = int(input('Введите день: '))
+if day<=0 or day>=32: print('Такого не может быть :)')
+elif month == 'Январь' and day!=0 and day<=20: print('Ваш знак зодиака: Козерог')
+elif month == 'Январь' and 20<day<32: print('Ваш знак зодиака: Водолей')
+elif month == 'Февраль' and day!=0 and day<=19: print('Ваш знак зодиака: Водолей')
+elif month == 'Февраль' and 19<day<30: print('Ваш знак зодиака: Рыбы')
+elif month == 'Март' and day!=0 and day<=20: print('Ваш знак зодиака: Рыбы')
+elif month == 'Март' and 20<day<32: print('Ваш знак зодиака: Овен')
+elif month == 'Апрель' and day!=0 and day<=20: print('Ваш знак зодиака:о Овен')
+elif month == 'Апрель' and 20<day<31: print('Ваш знак зодиака: Телец')
+elif month == 'Май' and day!=0 and day<=20: print('Ваш знак зодиака: Телец')
+elif month == 'Май' and 20<day<32: print('Ваш знак зодиака: Близнецы')
+elif month == 'Июнь' and day!=0 and day<=21: print('Ваш знак зодиака: Близнецы')
+elif month == 'Июнь' and 21<day<31: print('Ваш знак зодиака: Рак')
+elif month == 'Июль' and day!=0 and day<=22: print('Ваш знак зодиака: Рак')
+elif month == 'Июль' and 22<day<32: print('Ваш знак зодиака: Лев')
+elif month == 'Август' and day!=0 and day<=23: print('Ваш знак зодиака: Лев')
+elif month == 'Август' and 23<day<32: print('Ваш знак зодиака: Дева')
+elif month == 'Сентябрь' and day!=0 and day<=23: print('Ваш знак зодиака: Дева')
+elif month == 'Сентябрь' and 23<day<31: print('Ваш знак зодиака: Весы')
+elif month == 'Октябрь' and day!=0 and day<=23: print('Ваш знак зодиака: Весы')
+elif month == 'Октябрь' and 23<day<32: print('Ваш знак зодиака: Скорпион')
+elif month == 'Ноябрь' and day!=0 and day<=22: print('Ваш знак зодиака: Скорпион')
+elif month == 'Ноябрь' and 22<day<31: print('Ваш знак зодиака: Стрелец')
+elif month == 'Декабрь' and day!=0 and day<=22: print('Ваш знак зодиака: Стрелец')
+elif month == 'Декабрь' and 22<day<31: print('Ваш знак зодиака: Козерог')
+  
+#4 задание
+width = int(input('Введите ширину коробки в сантиметрах: '))
+length = int(input('Введите длину коробки в сантиметрах: '))
+height = int(input('Введите высоту коробки в сантиметрах: '))
+if 0<width<=15 and 0<length<=15 and 0<height<=15:
+  print ('Коробка № 1')
+elif 15<width<50 or 15<length<50 or 15<height<50:
+  print ('Коробка № 2')
+elif width==0 or length==0 or height==0:
+  print ('Такой коробки не бывает :)')
+elif length>200:
+  print ('Ищите упаковку для лыж')
+else: print ('Стандартная коробка №3')
+
+#5 задание
