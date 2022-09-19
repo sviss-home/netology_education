@@ -1,0 +1,33 @@
+import json #импортируем модуль json
+dictionary_p_log = {} #создаём новый словарь dictionary_p_log
+with open('purchase_log.txt','r') as p_log: #открывая файл purchase_log.txt для чтения, задаём его данные в переменную p_log
+    for line in p_log: #запускаем цикл перебора данных, полученных из файла purchase_log.txt с условием:
+        content = p_log.readlines() #задаём переменную content, в которую будет читаться p_log построчно
+        for line in content: #запускаем цикл перебора данных, загруженных в переменную content с условиями:
+            new_dictionary = json.loads(line) #преобразуем данные json, содержащиеся в файле purchase_log.txt в формат данных python, используя импортированный модуль
+            key = new_dictionary["user_id"] #вводим переменную key и задаем для нового словаря значение keys, взяв их из "user_id"
+            value = new_dictionary["category"] #вводим переменную value и задаем для нового словаря значение values, взяв их из "category"
+            dictionary_p_log[key] = value #добавляем (заменяем) значения переменной value в словарь dictionary_p_log для существущих key
+print(dictionary_p_log) #выводим словарь dictionary_p_log
+
+with open('visit_log.csv','r') as v_log: #открывая файл visit_log.csv для чтения, задаём его данные в переменную v_log
+    with open('funnel.csv', 'w') as end_file: #открывая файл funnel.csv для записи, задаём его данные в переменную end_file
+        for line in v_log: # запускаем цикл перебора данных, содержащихся в переменной v_log с условиями: 
+            cols_list = line.strip().split(',') 
+            '''заводим переменную cols_list, в которую при выполнении цикла будут заноситсья данные, полученные из строк, 
+            полученных из файла v_log. Данные при этом форматируются методом strip(), из строки удаляются первый и последний
+            пробелы, затем строка разбивается по разделителю ',' методом split'''
+            log_user_id = cols_list[0]
+            '''заводим переменную log_user_id, в которую при выполнении цикла будут заноситсья данные, полученные из переменной
+            cols_list по индексу [0], т.е., первый элемент, полученный после разбивки cols_list методом split, в данном случае - 
+            данные (идентификатор), идентичные "user_id" в словаре dictionary_p_log'''
+            log_source = cols_list[1]
+            '''заводим переменную log_source, в которую при выполнении цикла будут заноситсья данные, полученные из переменной
+            cols_list по индексу [1], т.е., второй элемент, полученный после разбивки cols_list методом split, в данном случае - 
+            данные об источнике прехода, содержащиеся в файле visit_log.csv'''
+            if log_user_id in dictionary_p_log: #запускаем цикл перебора полученных значений переменной log_user_id по словарю dictionary_p_log
+                category = dictionary_p_log[log_user_id] #вводим переменную category, которую добавляем (заменяем) значения category в словарь dictionary_p_log для существущих key
+                end_file.writelines(f'{log_user_id},{log_source},{category}\n') #построчно записываем данные полученных переменных в новый файл 'funnel.csv' методом write, добавляем конец строки \n
+ef = open('funnel.csv', 'r') #открываем созданный funnel.csv для чтения
+ef_read = ef.readlines() #заводим переменную для построчного чтения открытого файла
+ef_read[:5] #выводим первые 5 значений переменной ef_read
